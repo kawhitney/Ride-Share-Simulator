@@ -16,8 +16,8 @@ class Vehicle:
     def move_position(self, new_position):
         self.current_position = new_position
 
-    def set_desitnation(self, destination):
-        self.desitnation = destination
+    def set_destination(self, destination):
+        self.destination = destination
 
 class Customer:
     '''
