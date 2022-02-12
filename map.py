@@ -7,7 +7,7 @@ class Map:
     '''
     def __init__(self, nodes, connectivity, seed):
         self.seed = seed
-        self.graph = nx.gnp_random_graph(nodes, connectivity, seed=seed)
+        self.graph = nx.newman_watts_strogatz_graph(nodes, connectivity, .6, seed=seed)
         self.color = 'lightblue'
 
     def change_color(self, color):
