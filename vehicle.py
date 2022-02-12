@@ -10,7 +10,7 @@ class Vehicle:
         self.currentPosition = random.randrange(0, 200)
         self.customers = np.array([])
         self.path = np.array([])
-        self.destination = None
+        self.destination = self.currentPosition
 
     def add_customer(self, customer):
         self.customers.append(customer)
