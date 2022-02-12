@@ -1,11 +1,12 @@
 import numpy as np
+import random
 
 class Vehicle:
     '''
         Variables: array of customers(capacity=5), current location, next destination (path?)
     '''
-    def __init__(self, current_position):
-        self.current_position = current_position
+    def __init__(self):
+        self.current_position = random.randrange(0, 200)
         self.customers = np.array([])
         self.destination = None
 
