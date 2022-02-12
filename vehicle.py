@@ -3,11 +3,13 @@ import random
 
 class Vehicle:
     '''
-        Variables: array of customers(capacity=5), current location, next destination (path?)
+        Variables: vehicle id, array of customers(capacity=5), current location, next destination (path?)
     '''
-    def __init__(self):
-        self.current_position = random.randrange(0, 200)
+    def __init__(self, vehicleID):
+        self.vehicleID = vehicleID
+        self.currentPosition = random.randrange(0, 200)
         self.customers = np.array([])
+        self.path = np.array([])
         self.destination = None
 
     def add_customer(self, customer):
@@ -16,17 +18,24 @@ class Vehicle:
     def remove_customer(self, customer):
         self.customers.remove(customer)
 
-    def move_position(self, new_position):
-        self.current_position = new_position
+    def move_position(self, newPosition):
+        self.currentPosition = newPosition
 
-    def set_desitnation(self, destination):
-        self.desitnation = destination
+    def set_path(self, path):
+        self.path = path
+
+    def set_destination(self, destination):
+        self.destination = destination
 
 class Customer:
     '''
-        Variables: pick-up point, drop-off location, pick-up time(?)
+        Variables: customer id, pick-up point, drop-off location, assigned vehicle
     '''
-    def __init__(self, pickup, dropoff, distance):
+    def __init__(self, customerID, pickup, dropoff):
+        self.customerID = customerID
         self.pickup = pickup
         self.dropoff = dropoff
-        # self.pickup_time =
+        self.assignedVehicle = None
+
+    def assign_vehicle(self, vehicleID):
+        self.assignedVehicle = vehicleID
