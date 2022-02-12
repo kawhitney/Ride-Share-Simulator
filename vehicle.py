@@ -1,10 +1,12 @@
+import numpy as np
+
 class Vehicle:
     '''
         Variables: array of customers(capacity=5), current location, next destination (path?)
     '''
     def __init__(self, current_position):
         self.current_position = current_position
-        self.customers = []
+        self.customers = np.array([])
         self.destination = None
 
     def add_customer(self, customer):
