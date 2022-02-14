@@ -1,16 +1,13 @@
-import numpy as np
-import random
-
 class Vehicle:
     '''
         Variables: vehicle id, array of customers(capacity=5), current location, next destination (path?)
     '''
-    def __init__(self, vehicleID):
+    def __init__(self, vehicleID, currentPosition):
         self.vehicleID = vehicleID
-        self.currentPosition = random.randrange(0, 200)
-        self.customers = np.array([])
-        self.path = np.array([])
-        self.destination = self.currentPosition
+        self.currentPosition = currentPosition
+        self.customers = []
+        self.path = []
+        self.destination = currentPosition
 
     def add_customer(self, customer):
         self.customers.append(customer)
