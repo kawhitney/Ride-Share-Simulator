@@ -18,7 +18,7 @@ class Vehicle:
         self.currentPosition = newPosition
 
     def set_path(self, path):
-        self.path = path
+        self.path.append(path)
 
     def set_destination(self, destination):
         self.destination = destination
