@@ -18,3 +18,6 @@ class Map:
         nx.draw_spring(self.graph, node_size=500, node_color=self.color, linewidths=0.25,
         font_size=10, font_weight='bold', with_labels=True)
         plt.show()
+        
+    def find_neighbor(self, location):
+        self.graph.neighbors(location)        
