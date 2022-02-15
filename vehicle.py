@@ -24,12 +24,8 @@ class Vehicle:
         self.destination = destination
 
 class Customer:
-    # Variables: customer id, pick-up point, drop-off location, assigned vehicle
+    # Variables: customer id, pick-up point, drop-off location
     def __init__(self, customerID, pickup, dropoff):
         self.customerID = customerID
         self.pickup = pickup
         self.dropoff = dropoff
-        self.assignedVehicle = None
-
-    def assign_vehicle(self, vehicleID):
-        self.assignedVehicle = vehicleID
