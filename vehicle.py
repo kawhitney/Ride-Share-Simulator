@@ -7,6 +7,8 @@ class Vehicle:
         self.path = []
         self.destination = currentPosition
         self.miles = 0
+        self.customer_in_queue = None
+        self.is_busy = False
 
     def add_customer(self, customer):
         self.customers.append(customer)
@@ -20,8 +22,11 @@ class Vehicle:
     def set_path(self, path):
         self.path = path
 
-    def set_destination(self, destination):
-        self.destination = destination
+    def change_busy(self):
+        if self.is_busy == False:
+          self.is_busy = True
+        else:
+          self.is_busy = False
 
 class Customer:
     # Variables: customer id, pick-up point, drop-off location
